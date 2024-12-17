@@ -3,7 +3,7 @@ import { defineType, defineField } from "sanity";
 export const author = defineType({
   name: "author",
   type: "document",
-  title: "Aurthor",
+  title: "Author",
   fields: [
     defineField({
       name: "name",
@@ -14,7 +14,7 @@ export const author = defineType({
       name: "publishDate",
       type: "date",
       title: "Date",
-      validation: (Rule: any) =>
+      validation: (Rule) =>
         Rule.required().error("Only numeric value allows!!"),
     }),
   ],

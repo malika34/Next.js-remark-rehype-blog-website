@@ -11,7 +11,6 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import OnThisPage from "@/components/ui/onthispage";
-import { useState } from "react";
 import Comments from "@/components/ui/Comments";
 
 export default async function Page({ params }: { params: { slug: string } }) {

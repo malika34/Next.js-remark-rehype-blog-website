@@ -1,4 +1,4 @@
-import { defineType, defineField, defineArrayMember } from "sanity";
+import { defineType, defineField } from "sanity";
 
 export const post = defineType({
   name: "blogPost",
@@ -9,7 +9,7 @@ export const post = defineType({
       name: "title",
       type: "string",
       title: "title",
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     // Slug page
     defineField({
@@ -19,7 +19,7 @@ export const post = defineType({
       options: {
         source: "title",
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "postParagrah",

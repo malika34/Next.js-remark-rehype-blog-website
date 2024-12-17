@@ -1,5 +1,5 @@
-import { Rule } from "postcss";
 import { defineType, defineField } from "sanity";
+
 export const author = defineType({
   name: "author",
   type: "document",
@@ -15,7 +15,7 @@ export const author = defineType({
       type: "date",
       title: "Date",
       validation: (Rule: any) =>
-        Rule.required(Number).error("Only numeric value allows!!"),
+        Rule.required().error("Only numeric value allows!!"),
     }),
   ],
 });

@@ -11,6 +11,8 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import OnThisPage from "@/components/ui/onthispage";
+import { useState } from "react";
+import Comments from "@/components/ui/Comments";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const filepath = path.join(process.cwd(), "content", `${params.slug}.md`);
@@ -58,6 +60,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
         className="prose dark:prose-invert"
       ></div>
       <OnThisPage htmlContent={htmlContent} />
+      <div>
+        <Comments />
+      </div>
     </div>
   );
 }

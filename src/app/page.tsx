@@ -3,7 +3,8 @@ import Typed from "typed.js";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React, { useRef, useEffect } from "react";
-function Homepage() {
+import { client } from "@/sanity/lib/client";
+async function Homepage() {
   const el = useRef(null);
 
   useEffect(() => {
@@ -25,6 +26,11 @@ function Homepage() {
       typed.destroy();
     };
   }, []);
+  const query = `*[_type=="blogPost"] | order(_createdAt asc){
+  title,"slug":slug.current,image
+}`;
+  const posts = await client.fetch(query);
+  console.log("Fetched posts:", posts);
   return (
     <main>
       {/* Hero section starts here*/}
